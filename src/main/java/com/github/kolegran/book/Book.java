@@ -1,24 +1,27 @@
-package com.github.kolegran;
-import io.micronaut.core.annotation.NonNull;
+package com.github.kolegran.book;
+
 import io.micronaut.core.annotation.Introspected;
+
 import javax.validation.constraints.NotBlank;
 
 @Introspected
 public class Book {
 
-    @NonNull
     @NotBlank
     private String name;
 
-    public Book() {
-    }
-
-    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+            "name='" + name + '\'' +
+            '}';
     }
 }
